@@ -112,6 +112,12 @@ def get_post(post_id):
                 title:
                   type: string
                   description: título do blog post
+                body:
+                  type: string
+                  description: corpo do blog post
+                author:
+                  type: string
+                  description: autor do blog post
                 date:
                   type: string
                   format: date-time
@@ -137,10 +143,11 @@ def get_post(post_id):
 
     if row:
         result = {
-            'id':    row[0],
-            'title': row[1],
-            'body':  row[2],
-            'date':  row[3]
+            'id'    : row[0],
+            'title' : row[1],
+            'body'  : row[2],
+            'author': row[3],
+            'date'  : row[4]
         }
         return jsonify(result)
     else:
